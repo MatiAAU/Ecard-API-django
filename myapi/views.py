@@ -26,7 +26,6 @@ class GenericAPIView(generics.GenericAPIView, mixins.ListModelMixin, mixins.Crea
     def delete(self, request, pk):
         return self.destroy(request, pk)
 
-
 # Class based view - better, because it allows to compose bits of reusable behaviour
 class EmployeeAPIView(APIView):
 
@@ -44,7 +43,6 @@ class EmployeeAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 # Function based view
 # @api_view(['GET', 'POST'])
